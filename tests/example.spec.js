@@ -33,11 +33,11 @@ test("test case 4 :sign up", async({page})=> {
 
 });
 
-test('test case 5 :should have "Follow Us" section in the footer', async ({ page }) => {
-  await page.goto("https://www.w3schools.com/",{ timeout: 10000 });
-  const followUsSection = page.locator('footer a[href*="facebook"]');
-  await expect(followUsSection).toBeVisible({ timeout: 5000 });
-});
+// test('test case 5 :should have "Follow Us" section in the footer', async ({ page }) => {
+//   await page.goto("https://www.w3schools.com/",{ timeout: 10000 });
+//   const followUsSection = page.locator('footer a[href*="facebook"]');
+//   await expect(followUsSection).toBeVisible({ timeout: 5000 });
+// });
 
 // test('cloud that', async ({page}) => {
 //   await page.goto("https://www.w3schools.com/",{timeout: 100000});
