@@ -16,19 +16,21 @@ test('test 7 : should see "HTML Examples" section', async ({ page }) => {
     // Targeting the link styled as a button
         await expect(examplesSection).toBeVisible({timeout:6000});
 });
+test('test 8: html Test ',async ({page})=> {
+  await page.goto("http://127.0.0.1:5500/WishFund-%20Nonprofit%20Charity%20Funderising%20Theme.html",{timeout: 70000});
 
-test('test 8 -"Try it Yourself" button and check iframe content', async ({ page }) => {
+  await expect(page).toHaveTitle(/Wishfund/i);
+})
 
-    await page.goto("https://www.w3schools.com/html/",{timeout: 70000});
-    // Click the "Try it Yourself" button
-    await page.locator('a[title="Try it Yourself"]').click({timeout: 70000});
+// test('test 9: html Test ',async ({page})=> {
+//   await page.goto("https://www.w3schools.com/html/tryit.asp?filename=tryhtml_images_alt_chania",{timeout: 100000});
 
-    const iframe = page.frameLocator('iframe[id="iframeResult"]');
-    
-    // Verify that the iframe contains expected content
-    // Example: Check if it contains the HTML tag in the preview
-    const htmlTag = iframe.locator('html');
-    await expect(htmlTag).toBeVisible();
+//   const locator = page.getByRole('textarea',{timeout:10000});
+// await expect(locator).toBeEditable({timeout:8000});
+// })
 
-   
-  });
+
+test('test 10: skip this test', async ({ page, browserName }) => {
+  await page.goto("https://www.w3schools.com/html");
+  test.skip(browserName === 'firefox', 'Still working on it');
+});
