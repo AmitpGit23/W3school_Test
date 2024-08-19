@@ -10,6 +10,7 @@ const { defineConfig, devices } = require('@playwright/test');
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
+const path = require('path');
 module.exports = defineConfig({
   timeout: 60000,
   testDir: './tests',
@@ -24,6 +25,8 @@ module.exports = defineConfig({
 
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI ? 'blob' : 'html',
+  
+  outputDir: path.resolve(__dirname, 'all-blob-reports'),
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
